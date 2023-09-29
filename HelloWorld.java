@@ -1,8 +1,28 @@
+import java.util.Scanner;
+
 public class HelloWorld {
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i);
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the number of values: ");
+        int numValues = scanner.nextInt();
+
+        if (numValues <= 0) {
+            System.out.println("Please enter a positive number of values.");
+            return;
         }
-        System.out.println("This is another string!");
+
+        double sum = 0;
+
+        for (int i = 1; i <= numValues; i++) {
+            System.out.print("Value " + i + ": ");
+            sum += scanner.nextDouble();
+        }
+
+        double average = sum / numValues;
+
+        System.out.println("Average: " + average);
+
+        scanner.close();
     }
 }
