@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
+        //We use scanner to input the values
         Scanner scanner = new Scanner(System.in);
         
+        //We ask users to enter the number of values
         System.out.print("Enter the number of values: ");
         int numValues = scanner.nextInt();
 
@@ -13,16 +15,32 @@ public class HelloWorld {
         }
 
         double sum = 0;
+        double smallest = Double.MAX_VALUE; //Initialize smallest to the largest possible value
+        double largest = Double.MIN_VALUE; //Initialize largest to the smallest possible value
 
         for (int i = 1; i <= numValues; i++) {
             System.out.print("Value " + i + ": ");
-            sum += scanner.nextDouble();
+            double value = scanner.nextDouble();
+
+            sum += value;
+
+            if(value < smallest) {
+                smallest = value;
+            }
+
+            if(value > largest) {
+                largest = value;
+            } 
+            
+            System.out.println("Average: " + average);
+            System.out.println("Smallest: " + smallest);
+            System.out.println("Largest: " + largest);
+
+            scanner.close();
+
+            double average = sum / numValues;
+
         }
 
-        double average = sum / numValues;
-
-        System.out.println("Average: " + average);
-
-        scanner.close();
     }
-}
+
