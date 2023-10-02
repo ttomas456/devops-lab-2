@@ -32,10 +32,12 @@ public class HelloWorld {
                 largest = value;
             } 
             
+            //Print out the statement
             System.out.println("Average: " + average);
             System.out.println("Smallest: " + smallest);
             System.out.println("Largest: " + largest);
 
+            //Use scanner to close the program
             scanner.close();
 
             double average = sum / numValues;
